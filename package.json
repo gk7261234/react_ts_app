@@ -37,17 +37,23 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
-    "lint:es": "eslint -c .eslintrc.js ./src",
+    "lint:es": "eslint --fix --ext .js src",
     "lint:ts": "tslint --fix -c ./tslint.json 'src/**/*{.ts,.tsx}'"
   },
   "pre-commit": [
-    "lint:ts"
+    "lint:ts",
+    "lint:es"
   ],
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "no-use-before-define": "off",
+      "@typescript-eslint/no-use-before-define": "off",
+      "@typescript-eslint/no-explicit-any": "off"
+    }
   },
   "browserslist": {
     "production": [

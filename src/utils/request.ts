@@ -18,7 +18,7 @@ const codeMessage: any = {
   503: '服务不可用，服务器暂时过载或维护。',
   504: '网关超时。',
 };
-console.log("===========> env ", process.env.REACT_APP_BASE_URL);
+
 axios.defaults.headers["Content-Type"] = 'application/json';
 axios.defaults.withCredentials = true;
 // axios.defaults.crossDomain = true;

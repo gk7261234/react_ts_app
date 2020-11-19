@@ -39,6 +39,7 @@
 ## 概述
 
 + 配置tslint:  tslint tslint-config-prettier tslint-react 检测代码 is ok
++ 配置 eslint 代码检测
 + axios 二次封装 is ok
 + Api service 抽象管理(service & 静态Api 注入) [vue 可以配置全局属性] is ok
 + pre-commit: 代码git commit 前，对代码校验及修复 is ok
@@ -50,10 +51,10 @@
 
 ## 优化补充
 
-+ 添加 js， css 代码检测
-+ 性能优化： 配置 babel-plugin-import 按需加载 组件懒加载（集成到微服务有问题） 预加载/预解析
++ 添加 css 代码检测
++ 性能优化： 配置按需加载 组件懒加载（集成到微服务有问题） 预加载/预解析
 + 配置redux [阮一峰教你不要用redux, 哈哈](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html)
-+ 设置文件别名 （tsconfig.json 项目运行自动生成修改后产生冲突）
++ 设置文件别名 （tsconfig.json 项目运行自动生成修改后产生冲突） 已解决
 
 ## 注意
 
