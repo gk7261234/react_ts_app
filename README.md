@@ -51,10 +51,51 @@
 ## 优化补充
 
 + 添加 js， css 代码检测
-+ 性能优化： 配置 babel-plugin-import 按需加载, 组件懒加载（集成到微服务有问题）
++ 性能优化： 配置 babel-plugin-import 按需加载 组件懒加载（集成到微服务有问题） 预加载/预解析
 + 配置redux [阮一峰教你不要用redux, 哈哈](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html)
 + 设置文件别名 （tsconfig.json 项目运行自动生成修改后产生冲突）
 
 ## 注意
 
++ 每个文件只包含一个React组件  eslint: react/no-multi-comp
 + 业务组件需具名
++ 拓展名：React组件使用.tsx扩展名
++ 文件名：文件名使用帕斯卡命名：HomePage.jsx
++ 引用命名：React组件使用帕斯卡命名，引用实例采用驼峰式命名：eslint: react/jsx-pascal-case
+  ```
+  // good
+  import ReservationCard from './ReservationCard';
+
+  //good
+  const reservationItem = <ReservationCard />
+
+  ```
++ 引号： tsx 属性采用双引号（因为 tsx 属性 不能包含转义的引导，当输入“don't”这类缩写使用双引号更方便）
++ 属性： 
+  ```
+  1. 使用驼峰命名法
+
+  // good
+  <Foo userName="hello" />
+
+  2. 当属性值等于true的时候，省略该属性的赋值。 eslint:react/jsx-boolean-value
+
+  // bad
+  <Foo hidden={true} />
+
+  // good
+  <Foo hidden />
+
+  ```
++ 括号： 使用括号包裹多行tsx标签 react/wrap-multilines
++ TypeScript：
+  ```
+  1. 使用 TSLint 管理代码规范
+  2. 尽量避免使用 any 定义数据类型 写好声明文件
+  3. 类型名使用 PascalCase
+  4. 函数名cameCase
+
+  ```
+
++ 。。。
+

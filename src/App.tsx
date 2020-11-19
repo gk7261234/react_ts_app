@@ -4,7 +4,7 @@ import routes from "./router/index";
 
 const BASE_NAME = window.__POWERED_BY_QIANKUN__ ? "/test" : "";
 
-function App() {
+function App(): JSX.Element {
   return (
     <div>
       <BrowserRouter basename={BASE_NAME}>

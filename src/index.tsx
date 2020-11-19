@@ -24,16 +24,16 @@ function render(props: any = {}) {
   );
 }
 
-export async function bootstrap() {
+export async function bootstrap(): Promise<void> {
   console.log("react app bootstraped");
 }
 
-export async function mount(props: any) {
+export async function mount(props: []): Promise<void> {
   console.log("reactApp mount", props);
   render(props);
 }
 
-export async function unmount() {
+export async function unmount(): Promise<void> {
   console.log("react unmount");
   const RootNode = document.getElementById("root")
   if(RootNode){
