@@ -35,7 +35,6 @@ const dataFetchReducer = (state: any, actions: any) => {
       }
       break;
   }
-
 }
 
 const useDataApi = (value: string) => {
@@ -81,5 +80,3 @@ const Example: React.FC<Props> = () => {
     </div>
   )
 };
-
-export default Example;
