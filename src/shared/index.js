@@ -20,6 +20,7 @@ class SharedModule {
   /**
    * 重载 shared
    */
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   static overloadShared(shared) {
     SharedModule.shared = shared;
   }

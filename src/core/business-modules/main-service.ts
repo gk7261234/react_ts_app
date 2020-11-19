@@ -1,8 +1,8 @@
-import ExampleService from "./example-domain/service/ExampleService";
-import * as IExampleService from "./example-domain/service/IExampleService";
-import api from "../business-config/ApiConfig";
-import IApi from "../business-config/IApiConfig";
-import request from "../../utils/request"
+import ExampleService from "@core/business-modules/example-domain/service/ExampleService";
+import * as IExampleService from "@core/business-modules/example-domain/service/IExampleService";
+import api from "@core/business-config/ApiConfig";
+import IApi from "@core/business-config/IApiConfig";
+import request from "@/utils/request";
 
 interface IRequest {
   get<P, R>(_url: string, _params?: P): Promise<R>;
@@ -16,7 +16,7 @@ export class MainService {
   static api: IApi;
   static request: IRequest;
   static Instance(): MainService {
-    if(!MainService.instance) {
+    if (!MainService.instance) {
       MainService.instance = new MainService();
       MainService.request = request;
       MainService.api = api;

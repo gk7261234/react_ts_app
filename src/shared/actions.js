@@ -5,9 +5,9 @@ function emptyAction() {
 class Actions {
   actions = {
     onGlobalStateChange: emptyAction,
-    setGlobalState: emptyAction
+    setGlobalState: emptyAction,
   };
-  
+
   setActions(actions) {
     this.actions = actions;
   }

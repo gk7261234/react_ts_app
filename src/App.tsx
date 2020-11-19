@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import routes from "./router/index";
 
@@ -8,11 +8,11 @@ function App(): JSX.Element {
   return (
     <div>
       <BrowserRouter basename={BASE_NAME}>
-      <Suspense fallback={null}>
-        {routes.map((route: any) => {
+        <Suspense fallback={null}>
+          {routes.map((route: any) => {
             return <Route path={route.path} component={route.component} key={route.key} />;
           })}
-      </Suspense>
+        </Suspense>
       </BrowserRouter>
     </div>
   );

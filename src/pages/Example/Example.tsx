@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useReducer } from "react";
-import { MainService } from "../../core/business-modules/main-service";
+import { MainService } from "@core/business-modules/main-service";
 import { Row, Input } from "antd";
 const { Search } = Input;
 
@@ -10,55 +10,55 @@ const dataFetchReducer = (state: any, actions: any) => {
         ...state,
         isLoading: true,
         isError: false,
-      }
+      };
       break;
     case "FETCH_SUCCESS":
       return {
         ...state,
         isLoading: false,
         isError: false,
-        data: actions.payload
-      }
+        data: actions.payload,
+      };
       break;
     case "FETCH_FAILUER":
       return {
         ...state,
         isLoading: false,
-        isError: true
-      }
+        isError: true,
+      };
       break;
     default:
       return {
         ...state,
         isLoading: false,
-        isError: true
-      }
+        isError: true,
+      };
       break;
   }
-}
+};
 
 const useDataApi = (value: string) => {
   const [search, setSearch] = useState(value);
   const [state, dispatch] = useReducer(dataFetchReducer, {
     isLoading: false,
     isError: false,
-    data: []
-  })
+    data: [],
+  });
   useEffect(() => {
     async function getExampleList() {
       dispatch({ type: "FETCH_INIT" });
       try {
         // 测试 Ajax 请求
         const result = await MainService.Instance().ExampleService.getList();
-        dispatch({ type: "FETCH_SUCCESS", payload: result.data })
+        dispatch({ type: "FETCH_SUCCESS", payload: result.data });
       } catch (error) {
-        dispatch({ type: "FETCH_FAILUER" })
+        dispatch({ type: "FETCH_FAILUER" });
       }
     }
-    getExampleList()
-  }, [search])
+    getExampleList();
+  }, [search]);
   return [state, setSearch];
-}
+};
 
 type Props = any;
 const Example: React.FC<Props> = () => {
@@ -69,14 +69,28 @@ const Example: React.FC<Props> = () => {
         <Search
           placeholder="input search text"
           allowClear={true}
-          onSearch={(value=>{doFetch(value)})}
-          style={{ width: 200, margin: '0 10px' }}
+          onSearch={(value) => {
+            doFetch(value);
+          }}
+          style={{ width: 200, margin: "0 10px" }}
         />
       </Row>
       <Row justify="center" align="middle">
         {isError && <div>something went wrong ...</div>}
-        {isLoading ? (<div>Loding ...</div>) : (<ul>{data.map((item: any) => (<li key={item.key}><a href={item.url}>{item.title}</a></li>))}</ul>)}
+        {isLoading ? (
+          <div>Loding ...</div>
+        ) : (
+          <ul>
+            {data.map((item: any) => (
+              <li key={item.key}>
+                <a href={item.url}>{item.title}</a>
+              </li>
+            ))}
+          </ul>
+        )}
       </Row>
     </div>
-  )
+  );
 };
+
+export default Example;

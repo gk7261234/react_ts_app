@@ -1,6 +1,6 @@
-export default interface IApi{
+export default interface IApi {
   ExampleApi: {
     getList: string;
     getOther: string;
-  }
+  };
 }
