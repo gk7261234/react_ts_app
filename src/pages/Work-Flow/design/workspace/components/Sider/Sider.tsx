@@ -31,7 +31,7 @@ let Sider = (_props: any, ref: any): any => {
         </Form.Item>
       </Form>
     );
-  }, []);
+  }, [form]);
 
   return (
     <div className="rightArea">

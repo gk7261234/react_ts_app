@@ -6,11 +6,11 @@ import SiderItem from "./components/Sider/Sider";
 import ContentItem from "./components/Content/Content";
 import ButtonGroup from "antd/lib/button/button-group";
 export const IndexContext = createContext({ nodeData: [] });
-interface INodeData {
+interface NodeData {
   nodes: any[];
 }
 const WorkSpance: React.FC = () => {
-  const [nodeData, setNodeData] = useState<INodeData>({ nodes: [] });
+  const [nodeData, setNodeData] = useState<NodeData>({ nodes: [] });
   const graphData = useRef();
   const formData = useRef();
   const [visible, setVisible] = useState(false);

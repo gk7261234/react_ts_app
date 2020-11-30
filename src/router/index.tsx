@@ -11,11 +11,28 @@ const routes: routeType[] = [
     component: Example,
   },
   {
-    title: "工作流设计",
-    exact: true,
-    key: "work-flow-design",
-    path: "/design",
-    component: WorkFlowDesign,
+    title: "工作流管理",
+    path: "/workFlow",
+    children: [
+      {
+        title: "工作流设计",
+        exact: true,
+        path: "/design",
+        component: WorkFlowDesign,
+      },
+      {
+        title: "工作流实例",
+        exact: true,
+        path: "/instance",
+        component: WorkFlowDesign,
+      },
+      {
+        title: "工作流编辑器",
+        exact: true,
+        path: "/workspance",
+        component: WorkFlowDesign,
+      },
+    ],
   },
 ];
 
