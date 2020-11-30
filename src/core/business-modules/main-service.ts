@@ -4,7 +4,7 @@ import api from "@core/business-config/ApiConfig";
 import IApi from "@core/business-config/IApiConfig";
 import request from "@/utils/request";
 
-interface IRequest {
+interface Request {
   get<P, R>(_url: string, _params?: P): Promise<R>;
   post<P, R>(_url: string, _params?: P): Promise<R>;
   delete<P, R>(_url: string, _params?: P): Promise<R>;
@@ -14,7 +14,7 @@ interface IRequest {
 export class MainService {
   static instance: MainService;
   static api: IApi;
-  static request: IRequest;
+  static request: Request;
   static Instance(): MainService {
     if (!MainService.instance) {
       MainService.instance = new MainService();

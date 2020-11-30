@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "antd/dist/antd.css";
-
+import "./public-path";
 import App from "./App";
 import actions from "./shared/actions";
 import SharedModule from "./shared/index.js";
