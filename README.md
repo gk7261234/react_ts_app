@@ -41,7 +41,7 @@
 + 配置tslint:  tslint tslint-config-prettier tslint-react 检测代码 is ok
 + 配置 eslint 代码检测
 + axios 二次封装 is ok
-+ Api service 抽象管理(service & 静态Api 注入) [vue 可以配置全局属性] is ok
++ Api service 抽象管理IOC [vue 可以配置全局属性] is ok
 + pre-commit: 代码git commit 前，对代码校验及修复 is ok
 + 环境配置文件 is ok
 + 添加 微服务通用配置 is ok

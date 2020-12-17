@@ -11,7 +11,7 @@ if (!window.__POWERED_BY_QIANKUN__) {
   render();
 }
 
-function render(props: any = {}) {
+function render(props: any = {}): void {
   if (props) {
     const { shared = SharedModule.getShared() } = props;
     SharedModule.overloadShared(shared);
