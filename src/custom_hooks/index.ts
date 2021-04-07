@@ -1,2 +1,2 @@
-import FetchTableAction from "@/custom_hooks/FetchReducer";
+import FetchTableAction from "@hooks/FetchReducer";
 export { FetchTableAction };
