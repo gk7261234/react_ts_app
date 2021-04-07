@@ -11,7 +11,6 @@ const dataFetchReducer = (state: any, actions: any) => {
         isLoading: true,
         isError: false,
       };
-      break;
     case "FETCH_SUCCESS":
       return {
         ...state,
@@ -19,21 +18,18 @@ const dataFetchReducer = (state: any, actions: any) => {
         isError: false,
         data: actions.payload,
       };
-      break;
     case "FETCH_FAILUER":
       return {
         ...state,
         isLoading: false,
         isError: true,
       };
-      break;
     default:
       return {
         ...state,
         isLoading: false,
         isError: true,
       };
-      break;
   }
 };
 

@@ -29,12 +29,12 @@ const _axiosConfig = {
 
 const _axios = axios.create(_axiosConfig);
 _axios.interceptors.request.use(
-  (options) => {
+  (options: any) => {
     // Do something before request is sent
     // options.headers['Cache-Control'] = 'no-cache';
     return options;
   },
-  (error) => {
+  (error: any) => {
     // Do something with request error
     console.log("request: ", error);
     return Promise.reject(error);
@@ -42,11 +42,11 @@ _axios.interceptors.request.use(
 );
 
 _axios.interceptors.response.use(
-  (response) => {
+  (response: { data: any }) => {
     // Do something with response data
     return response.data;
   },
-  (error) => {
+  (error: { response: any }) => {
     console.log("response: ", error);
     // Do something with response error
     const response = error.response;

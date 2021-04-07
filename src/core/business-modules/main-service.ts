@@ -8,7 +8,7 @@ import ServiceRegister from "./service-register";
 
 import * as IExampleService from "@core/business-modules/example-domain/service/IExampleService";
 
-interface IRequest {
+interface Request {
   get<P, R>(_url: string, _params?: P): Promise<R>;
   post<P, R>(_url: string, _params?: P): Promise<R>;
   delete<P, R>(_url: string, _params?: P): Promise<R>;
@@ -17,7 +17,7 @@ interface IRequest {
 export class MainService {
   static instance: MainService;
   static api: IApi;
-  static request: IRequest;
+  static request: Request;
   private container: awilix.AwilixContainer;
   constructor() {
     // 1. 创建容器

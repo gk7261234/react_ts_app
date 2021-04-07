@@ -1,5 +1,7 @@
+import React from "react";
 import { routeType } from "./types";
-import Example from "@/pages/Example/Example";
+// import Example from "@/pages/Example/Example";
+const Example = React.lazy(() => import("@/pages/Example/Example.tsx"));
 
 const routes: routeType[] = [
   {

@@ -1,5 +1,6 @@
 {
   "extends": "./paths.json",
+  "defaultSeverity": "none",
   "compilerOptions": {
     "target": "es5",
     "lib": [
